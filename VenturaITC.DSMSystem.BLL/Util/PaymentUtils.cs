@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VenturaITC.DSMSystem.BLL.Unit;
+using VenturaITC.DSMSystem.DAL.Model;
 using VenturaITC.DSMSystem.MODEL.Class;
 using VenturaITC.DSMSystem.MODEL.Entity;
 using VenturaITC.VenturaITC.DSMSystem.BLL.Unit;
@@ -93,7 +94,7 @@ namespace VenturaITC.DSMSystem.BLL.Util
         /// <summary>
         /// Indicates whether a receipt number exists into database.
         /// </summary>
-        /// <param number="cost">The receipt number.</param>
+        /// <param name="number">The receipt number.</param>
         /// <returns>True if exists; False otherwise.</returns>
         public static bool ExistsReceiptNumber(int number)
         {

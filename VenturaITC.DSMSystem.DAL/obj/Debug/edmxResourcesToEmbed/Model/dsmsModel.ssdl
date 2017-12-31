@@ -106,7 +106,7 @@
     <Key>
       <PropertyRef Name="number" />
     </Key>
-    <Property Name="number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="number" Type="int" Nullable="false" />
     <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="type_description" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="full_name" Type="nvarchar" MaxLength="255" Nullable="false" />

@@ -1,5 +1,4 @@
-C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\bin\Debug\VenturaITC.DSMSystem.DOC.dll
-C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\bin\Debug\VenturaITC.DSMSystem.DOC.pdb
-C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\obj\Debug\VenturaITC.DSMSystem.DOC.dll
-C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\obj\Debug\VenturaITC.DSMSystem.DOC.pdb
-C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\obj\Debug\VenturaITC.DSMSystem.DOC.csprojResolveAssemblyReference.cache
+C:\Users\ventura.macute\Documents\Visual Studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\bin\Debug\VenturaITC.DSMSystem.DOC.dll
+C:\Users\ventura.macute\Documents\Visual Studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\bin\Debug\VenturaITC.DSMSystem.DOC.pdb
+C:\Users\ventura.macute\Documents\Visual Studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\obj\Debug\VenturaITC.DSMSystem.DOC.dll
+C:\Users\ventura.macute\Documents\Visual Studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\obj\Debug\VenturaITC.DSMSystem.DOC.pdb

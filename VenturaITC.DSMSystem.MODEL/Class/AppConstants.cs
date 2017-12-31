@@ -77,6 +77,7 @@ namespace VenturaITC.DSMSystem.MODEL.Class
             public const string ERROR_INVALID_MOTHERST_NAME = "Nome da mãe inválido!";
             public const string ERROR_DATE_OF_BIRTH_IN_FUTURE = "Data de nascimento futura!";
             public const string ERROR_ALREADY_EXISTS_RECEIPT_NUMBER = "Número do Recibo já existente!";
+            public const string ERROR_ALREADY_EXISTS_STUDENT_NUMBER = "Número do estudante já existente!";
             public const string ERROR_DOC_EXCEEDS_SIZE_PICTURE = "A fotografia excede o tamanho máximo permitido";
             public const string ERROR_DOC_EXCEEDS_SIZE_IDCOPY = "A cópia de BI excede o tamanho máximo permitido";
             public const string ERROR_DOC_EXCEEDS_SIZE_CRIMINAL_RECORD = "O documento de registo criminal excede o tamanho máximo permitido";

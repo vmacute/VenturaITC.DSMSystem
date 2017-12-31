@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dsmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="dsmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="academic_level">
           <Key>
             <PropertyRef Name="id" />
@@ -111,7 +111,7 @@
           <Key>
             <PropertyRef Name="number" />
           </Key>
-          <Property Name="number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="number" Type="int" Nullable="false" />
           <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="type_description" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="full_name" Type="nvarchar" MaxLength="255" Nullable="false" />
@@ -357,103 +357,49 @@
             <End Role="user" EntitySet="user" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dsmsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="dsmsEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="academic_level" EntityType="dsmsModel.academic_level" />
-          <EntitySet Name="categories" EntityType="dsmsModel.category" />
-          <EntitySet Name="db_data_status" EntityType="dsmsModel.db_data_status" />
-          <EntitySet Name="document_type" EntityType="dsmsModel.document_type" />
-          <EntitySet Name="genders" EntityType="dsmsModel.gender" />
-          <EntitySet Name="holidays" EntityType="dsmsModel.holiday" />
-          <EntitySet Name="id_issuance_place" EntityType="dsmsModel.id_issuance_place" />
-          <EntitySet Name="marital_status" EntityType="dsmsModel.marital_status" />
-          <EntitySet Name="parameterizations" EntityType="dsmsModel.parameterization" />
-          <EntitySet Name="parameterization_bool" EntityType="dsmsModel.parameterization_bool" />
-          <EntitySet Name="payment_installment" EntityType="dsmsModel.payment_installment" />
-          <EntitySet Name="payment_status" EntityType="dsmsModel.payment_status" />
-          <EntitySet Name="payment_type" EntityType="dsmsModel.payment_type" />
-          <EntitySet Name="provinces" EntityType="dsmsModel.province" />
-          <EntitySet Name="students" EntityType="dsmsModel.student" />
-          <EntitySet Name="student_documentation" EntityType="dsmsModel.student_documentation" />
-          <EntitySet Name="student_enrollment" EntityType="dsmsModel.student_enrollment" />
-          <EntitySet Name="student_payment" EntityType="dsmsModel.student_payment" />
-          <EntitySet Name="student_type" EntityType="dsmsModel.student_type" />
-          <EntitySet Name="users" EntityType="dsmsModel.user" />
-          <EntitySet Name="user_role" EntityType="dsmsModel.user_role" />
-          <AssociationSet Name="FK_User_DBDataStatus" Association="dsmsModel.FK_User_DBDataStatus">
-            <End Role="db_data_status" EntitySet="db_data_status" />
-            <End Role="user" EntitySet="users" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StudentDocumentation_DocumentType" Association="dsmsModel.FK_StudentDocumentation_DocumentType">
-            <End Role="document_type" EntitySet="document_type" />
-            <End Role="student_documentation" EntitySet="student_documentation" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StudentDocumentation_Student" Association="dsmsModel.FK_StudentDocumentation_Student">
-            <End Role="student" EntitySet="students" />
-            <End Role="student_documentation" EntitySet="student_documentation" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StudentPayment_Student" Association="dsmsModel.FK_StudentPayment_Student">
-            <End Role="student" EntitySet="students" />
-            <End Role="student_payment" EntitySet="student_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StudentRegistration_Student" Association="dsmsModel.FK_StudentRegistration_Student">
-            <End Role="student" EntitySet="students" />
-            <End Role="student_enrollment" EntitySet="student_enrollment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StudentRegistration_User" Association="dsmsModel.FK_StudentRegistration_User">
-            <End Role="user" EntitySet="users" />
-            <End Role="student_enrollment" EntitySet="student_enrollment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StudentPayment_User" Association="dsmsModel.FK_StudentPayment_User">
-            <End Role="user" EntitySet="users" />
-            <End Role="student_payment" EntitySet="student_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_UserRole" Association="dsmsModel.FK_User_UserRole">
-            <End Role="user_role" EntitySet="user_role" />
-            <End Role="user" EntitySet="users" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="academic_level">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="category">
           <Key>
             <PropertyRef Name="name" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="cost" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cost" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="db_data_status">
           <Key>
             <PropertyRef Name="name" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="users" Relationship="dsmsModel.FK_User_DBDataStatus" FromRole="db_data_status" ToRole="user" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK_User_DBDataStatus" FromRole="db_data_status" ToRole="user" />
         </EntityType>
         <EntityType Name="document_type">
           <Key>
             <PropertyRef Name="type" />
           </Key>
-          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="file_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="student_documentation" Relationship="dsmsModel.FK_StudentDocumentation_DocumentType" FromRole="document_type" ToRole="student_documentation" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="file_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="student_documentation" Relationship="Self.FK_StudentDocumentation_DocumentType" FromRole="document_type" ToRole="student_documentation" />
         </EntityType>
         <EntityType Name="gender">
           <Key>
             <PropertyRef Name="name" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="holiday">
           <Key>
@@ -468,27 +414,27 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="marital_status">
           <Key>
             <PropertyRef Name="name" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="parameterization">
           <Key>
             <PropertyRef Name="parameter_key" />
           </Key>
-          <Property Name="parameter_key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="parameter_value" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="parameter_key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="parameter_value" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="parameterization_bool">
           <Key>
             <PropertyRef Name="parameter_key" />
           </Key>
-          <Property Name="parameter_key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="parameter_key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="parameter_value" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="payment_installment">
@@ -496,64 +442,64 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="percentage" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="percentage" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="payment_status">
           <Key>
             <PropertyRef Name="name" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="payment_type">
           <Key>
             <PropertyRef Name="name" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="province">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="capital" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="capital" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="student">
           <Key>
             <PropertyRef Name="number" />
           </Key>
-          <Property Name="number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="type_description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="full_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="last_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="number" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="full_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="birth_date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="marital_status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="marital_status_description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="gender_description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="place_of_birth" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="province_of_birth" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="fathers_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="mothers_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="ID_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ID_issuance_place" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="marital_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="marital_status_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gender_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="place_of_birth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="province_of_birth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fathers_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mothers_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID_issuance_place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ID_issuance_date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ID_expiry_date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="academic_level" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="academic_level" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="job_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="phone_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="cell_phone1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cell_phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="cell_phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="student_documentation" Relationship="dsmsModel.FK_StudentDocumentation_Student" FromRole="student" ToRole="student_documentation" />
-          <NavigationProperty Name="student_payment" Relationship="dsmsModel.FK_StudentPayment_Student" FromRole="student" ToRole="student_payment" />
-          <NavigationProperty Name="student_enrollment" Relationship="dsmsModel.FK_StudentRegistration_Student" FromRole="student" ToRole="student_enrollment" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="student_documentation" Relationship="Self.FK_StudentDocumentation_Student" FromRole="student" ToRole="student_documentation" />
+          <NavigationProperty Name="student_payment" Relationship="Self.FK_StudentPayment_Student" FromRole="student" ToRole="student_payment" />
+          <NavigationProperty Name="student_enrollment" Relationship="Self.FK_StudentRegistration_Student" FromRole="student" ToRole="student_enrollment" />
         </EntityType>
         <EntityType Name="student_documentation">
           <Key>
@@ -561,10 +507,10 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="student_number" Type="Int32" Nullable="false" />
-          <Property Name="document_type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="document_content" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="document_type1" Relationship="dsmsModel.FK_StudentDocumentation_DocumentType" FromRole="student_documentation" ToRole="document_type" />
-          <NavigationProperty Name="student" Relationship="dsmsModel.FK_StudentDocumentation_Student" FromRole="student_documentation" ToRole="student" />
+          <Property Name="document_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="document_content" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="document_type1" Relationship="Self.FK_StudentDocumentation_DocumentType" FromRole="student_documentation" ToRole="document_type" />
+          <NavigationProperty Name="student" Relationship="Self.FK_StudentDocumentation_Student" FromRole="student_documentation" ToRole="student" />
         </EntityType>
         <EntityType Name="student_enrollment">
           <Key>
@@ -572,11 +518,11 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="student_number" Type="Int32" Nullable="false" />
-          <Property Name="category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="enrollment_date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="enrollment_user" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="student" Relationship="dsmsModel.FK_StudentRegistration_Student" FromRole="student_enrollment" ToRole="student" />
-          <NavigationProperty Name="user" Relationship="dsmsModel.FK_StudentRegistration_User" FromRole="student_enrollment" ToRole="user" />
+          <Property Name="enrollment_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="student" Relationship="Self.FK_StudentRegistration_Student" FromRole="student_enrollment" ToRole="student" />
+          <NavigationProperty Name="user" Relationship="Self.FK_StudentRegistration_User" FromRole="student_enrollment" ToRole="user" />
         </EntityType>
         <EntityType Name="student_payment">
           <Key>
@@ -585,33 +531,33 @@
           <Property Name="receipt_number" Type="Int32" Nullable="false" />
           <Property Name="student_number" Type="Int32" Nullable="false" />
           <Property Name="installment_number" Type="Int32" />
-          <Property Name="amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="total_paid_amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="remaining_amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="total_paid_amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="remaining_amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="student" Relationship="dsmsModel.FK_StudentPayment_Student" FromRole="student_payment" ToRole="student" />
-          <NavigationProperty Name="user" Relationship="dsmsModel.FK_StudentPayment_User" FromRole="student_payment" ToRole="user" />
+          <NavigationProperty Name="student" Relationship="Self.FK_StudentPayment_Student" FromRole="student_payment" ToRole="student" />
+          <NavigationProperty Name="user" Relationship="Self.FK_StudentPayment_User" FromRole="student_payment" ToRole="user" />
         </EntityType>
         <EntityType Name="student_type">
           <Key>
             <PropertyRef Name="name" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="username" />
           </Key>
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="full_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="cell_phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="full_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cell_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="locked" Type="Boolean" Nullable="false" />
           <Property Name="disabled" Type="Boolean" Nullable="false" />
-          <Property Name="password" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="password" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="must_change_password" Type="Boolean" Nullable="false" />
           <Property Name="last_password_change" Type="DateTime" Precision="3" />
           <Property Name="logged" Type="Boolean" Nullable="false" />
@@ -619,23 +565,23 @@
           <Property Name="current_login_attempts" Type="Int32" Nullable="false" />
           <Property Name="registration_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="registration_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="db_data_status" Relationship="dsmsModel.FK_User_DBDataStatus" FromRole="user" ToRole="db_data_status" />
-          <NavigationProperty Name="student_enrollment" Relationship="dsmsModel.FK_StudentRegistration_User" FromRole="user" ToRole="student_enrollment" />
-          <NavigationProperty Name="student_payment" Relationship="dsmsModel.FK_StudentPayment_User" FromRole="user" ToRole="student_payment" />
-          <NavigationProperty Name="user_role" Relationship="dsmsModel.FK_User_UserRole" FromRole="user" ToRole="user_role" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="db_data_status" Relationship="Self.FK_User_DBDataStatus" FromRole="user" ToRole="db_data_status" />
+          <NavigationProperty Name="student_enrollment" Relationship="Self.FK_StudentRegistration_User" FromRole="user" ToRole="student_enrollment" />
+          <NavigationProperty Name="student_payment" Relationship="Self.FK_StudentPayment_User" FromRole="user" ToRole="student_payment" />
+          <NavigationProperty Name="user_role" Relationship="Self.FK_User_UserRole" FromRole="user" ToRole="user_role" />
         </EntityType>
         <EntityType Name="user_role">
           <Key>
             <PropertyRef Name="name" />
           </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="users" Relationship="dsmsModel.FK_User_UserRole" FromRole="user_role" ToRole="user" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK_User_UserRole" FromRole="user_role" ToRole="user" />
         </EntityType>
         <Association Name="FK_User_DBDataStatus">
-          <End Type="dsmsModel.db_data_status" Role="db_data_status" Multiplicity="1" />
-          <End Type="dsmsModel.user" Role="user" Multiplicity="*" />
+          <End Role="db_data_status" Type="Self.db_data_status" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="db_data_status">
               <PropertyRef Name="name" />
@@ -646,8 +592,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentDocumentation_DocumentType">
-          <End Type="dsmsModel.document_type" Role="document_type" Multiplicity="1" />
-          <End Type="dsmsModel.student_documentation" Role="student_documentation" Multiplicity="*" />
+          <End Role="document_type" Type="Self.document_type" Multiplicity="1" />
+          <End Role="student_documentation" Type="Self.student_documentation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="document_type">
               <PropertyRef Name="type" />
@@ -658,8 +604,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentDocumentation_Student">
-          <End Type="dsmsModel.student" Role="student" Multiplicity="1" />
-          <End Type="dsmsModel.student_documentation" Role="student_documentation" Multiplicity="*" />
+          <End Role="student" Type="Self.student" Multiplicity="1" />
+          <End Role="student_documentation" Type="Self.student_documentation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="student">
               <PropertyRef Name="number" />
@@ -670,8 +616,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentPayment_Student">
-          <End Type="dsmsModel.student" Role="student" Multiplicity="1" />
-          <End Type="dsmsModel.student_payment" Role="student_payment" Multiplicity="*" />
+          <End Role="student" Type="Self.student" Multiplicity="1" />
+          <End Role="student_payment" Type="Self.student_payment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="student">
               <PropertyRef Name="number" />
@@ -682,8 +628,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentRegistration_Student">
-          <End Type="dsmsModel.student" Role="student" Multiplicity="1" />
-          <End Type="dsmsModel.student_enrollment" Role="student_enrollment" Multiplicity="*" />
+          <End Role="student" Type="Self.student" Multiplicity="1" />
+          <End Role="student_enrollment" Type="Self.student_enrollment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="student">
               <PropertyRef Name="number" />
@@ -694,8 +640,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentRegistration_User">
-          <End Type="dsmsModel.user" Role="user" Multiplicity="1" />
-          <End Type="dsmsModel.student_enrollment" Role="student_enrollment" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="student_enrollment" Type="Self.student_enrollment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="username" />
@@ -706,8 +652,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StudentPayment_User">
-          <End Type="dsmsModel.user" Role="user" Multiplicity="1" />
-          <End Type="dsmsModel.student_payment" Role="student_payment" Multiplicity="*" />
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="student_payment" Type="Self.student_payment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
               <PropertyRef Name="username" />
@@ -718,8 +664,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_UserRole">
-          <End Type="dsmsModel.user_role" Role="user_role" Multiplicity="1" />
-          <End Type="dsmsModel.user" Role="user" Multiplicity="*" />
+          <End Role="user_role" Type="Self.user_role" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user_role">
               <PropertyRef Name="name" />
@@ -729,6 +675,61 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="dsmsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="academic_level" EntityType="Self.academic_level" />
+          <EntitySet Name="categories" EntityType="Self.category" />
+          <EntitySet Name="db_data_status" EntityType="Self.db_data_status" />
+          <EntitySet Name="document_type" EntityType="Self.document_type" />
+          <EntitySet Name="genders" EntityType="Self.gender" />
+          <EntitySet Name="holidays" EntityType="Self.holiday" />
+          <EntitySet Name="id_issuance_place" EntityType="Self.id_issuance_place" />
+          <EntitySet Name="marital_status" EntityType="Self.marital_status" />
+          <EntitySet Name="parameterizations" EntityType="Self.parameterization" />
+          <EntitySet Name="parameterization_bool" EntityType="Self.parameterization_bool" />
+          <EntitySet Name="payment_installment" EntityType="Self.payment_installment" />
+          <EntitySet Name="payment_status" EntityType="Self.payment_status" />
+          <EntitySet Name="payment_type" EntityType="Self.payment_type" />
+          <EntitySet Name="provinces" EntityType="Self.province" />
+          <EntitySet Name="students" EntityType="Self.student" />
+          <EntitySet Name="student_documentation" EntityType="Self.student_documentation" />
+          <EntitySet Name="student_enrollment" EntityType="Self.student_enrollment" />
+          <EntitySet Name="student_payment" EntityType="Self.student_payment" />
+          <EntitySet Name="student_type" EntityType="Self.student_type" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="user_role" EntityType="Self.user_role" />
+          <AssociationSet Name="FK_User_DBDataStatus" Association="Self.FK_User_DBDataStatus">
+            <End Role="db_data_status" EntitySet="db_data_status" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentDocumentation_DocumentType" Association="Self.FK_StudentDocumentation_DocumentType">
+            <End Role="document_type" EntitySet="document_type" />
+            <End Role="student_documentation" EntitySet="student_documentation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentDocumentation_Student" Association="Self.FK_StudentDocumentation_Student">
+            <End Role="student" EntitySet="students" />
+            <End Role="student_documentation" EntitySet="student_documentation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentPayment_Student" Association="Self.FK_StudentPayment_Student">
+            <End Role="student" EntitySet="students" />
+            <End Role="student_payment" EntitySet="student_payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentRegistration_Student" Association="Self.FK_StudentRegistration_Student">
+            <End Role="student" EntitySet="students" />
+            <End Role="student_enrollment" EntitySet="student_enrollment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentRegistration_User" Association="Self.FK_StudentRegistration_User">
+            <End Role="user" EntitySet="users" />
+            <End Role="student_enrollment" EntitySet="student_enrollment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentPayment_User" Association="Self.FK_StudentPayment_User">
+            <End Role="user" EntitySet="users" />
+            <End Role="student_payment" EntitySet="student_payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserRole" Association="Self.FK_User_UserRole">
+            <End Role="user_role" EntitySet="user_role" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -738,221 +739,221 @@
           <EntitySetMapping Name="academic_level">
             <EntityTypeMapping TypeName="dsmsModel.academic_level">
               <MappingFragment StoreEntitySet="academic_level">
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="categories">
             <EntityTypeMapping TypeName="dsmsModel.category">
               <MappingFragment StoreEntitySet="category">
-                <ScalarProperty Name="cost" ColumnName="cost" />
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="db_data_status">
             <EntityTypeMapping TypeName="dsmsModel.db_data_status">
               <MappingFragment StoreEntitySet="db_data_status">
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="document_type">
             <EntityTypeMapping TypeName="dsmsModel.document_type">
               <MappingFragment StoreEntitySet="document_type">
-                <ScalarProperty Name="file_name" ColumnName="file_name" />
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="file_name" ColumnName="file_name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="genders">
             <EntityTypeMapping TypeName="dsmsModel.gender">
               <MappingFragment StoreEntitySet="gender">
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="holidays">
             <EntityTypeMapping TypeName="dsmsModel.holiday">
               <MappingFragment StoreEntitySet="holiday">
-                <ScalarProperty Name="month" ColumnName="month" />
                 <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="month" ColumnName="month" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="id_issuance_place">
             <EntityTypeMapping TypeName="dsmsModel.id_issuance_place">
               <MappingFragment StoreEntitySet="id_issuance_place">
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="marital_status">
             <EntityTypeMapping TypeName="dsmsModel.marital_status">
               <MappingFragment StoreEntitySet="marital_status">
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="parameterizations">
             <EntityTypeMapping TypeName="dsmsModel.parameterization">
               <MappingFragment StoreEntitySet="parameterization">
-                <ScalarProperty Name="parameter_value" ColumnName="parameter_value" />
                 <ScalarProperty Name="parameter_key" ColumnName="parameter_key" />
+                <ScalarProperty Name="parameter_value" ColumnName="parameter_value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="parameterization_bool">
             <EntityTypeMapping TypeName="dsmsModel.parameterization_bool">
               <MappingFragment StoreEntitySet="parameterization_bool">
-                <ScalarProperty Name="parameter_value" ColumnName="parameter_value" />
                 <ScalarProperty Name="parameter_key" ColumnName="parameter_key" />
+                <ScalarProperty Name="parameter_value" ColumnName="parameter_value" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="payment_installment">
             <EntityTypeMapping TypeName="dsmsModel.payment_installment">
               <MappingFragment StoreEntitySet="payment_installment">
-                <ScalarProperty Name="percentage" ColumnName="percentage" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="percentage" ColumnName="percentage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="payment_status">
             <EntityTypeMapping TypeName="dsmsModel.payment_status">
               <MappingFragment StoreEntitySet="payment_status">
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="payment_type">
             <EntityTypeMapping TypeName="dsmsModel.payment_type">
               <MappingFragment StoreEntitySet="payment_type">
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="provinces">
             <EntityTypeMapping TypeName="dsmsModel.province">
               <MappingFragment StoreEntitySet="province">
-                <ScalarProperty Name="capital" ColumnName="capital" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="capital" ColumnName="capital" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="students">
             <EntityTypeMapping TypeName="dsmsModel.student">
               <MappingFragment StoreEntitySet="student">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="cell_phone2" ColumnName="cell_phone2" />
-                <ScalarProperty Name="cell_phone1" ColumnName="cell_phone1" />
-                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
-                <ScalarProperty Name="job_title" ColumnName="job_title" />
-                <ScalarProperty Name="academic_level" ColumnName="academic_level" />
-                <ScalarProperty Name="ID_expiry_date" ColumnName="ID_expiry_date" />
-                <ScalarProperty Name="ID_issuance_date" ColumnName="ID_issuance_date" />
-                <ScalarProperty Name="ID_issuance_place" ColumnName="ID_issuance_place" />
-                <ScalarProperty Name="ID_number" ColumnName="ID_number" />
-                <ScalarProperty Name="address" ColumnName="address" />
-                <ScalarProperty Name="mothers_name" ColumnName="mothers_name" />
-                <ScalarProperty Name="fathers_name" ColumnName="fathers_name" />
-                <ScalarProperty Name="province_of_birth" ColumnName="province_of_birth" />
-                <ScalarProperty Name="place_of_birth" ColumnName="place_of_birth" />
-                <ScalarProperty Name="gender_description" ColumnName="gender_description" />
-                <ScalarProperty Name="gender" ColumnName="gender" />
-                <ScalarProperty Name="marital_status_description" ColumnName="marital_status_description" />
-                <ScalarProperty Name="marital_status" ColumnName="marital_status" />
-                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
-                <ScalarProperty Name="last_name" ColumnName="last_name" />
-                <ScalarProperty Name="first_name" ColumnName="first_name" />
-                <ScalarProperty Name="full_name" ColumnName="full_name" />
-                <ScalarProperty Name="type_description" ColumnName="type_description" />
-                <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="type_description" ColumnName="type_description" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+                <ScalarProperty Name="marital_status" ColumnName="marital_status" />
+                <ScalarProperty Name="marital_status_description" ColumnName="marital_status_description" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="gender_description" ColumnName="gender_description" />
+                <ScalarProperty Name="place_of_birth" ColumnName="place_of_birth" />
+                <ScalarProperty Name="province_of_birth" ColumnName="province_of_birth" />
+                <ScalarProperty Name="fathers_name" ColumnName="fathers_name" />
+                <ScalarProperty Name="mothers_name" ColumnName="mothers_name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="ID_number" ColumnName="ID_number" />
+                <ScalarProperty Name="ID_issuance_place" ColumnName="ID_issuance_place" />
+                <ScalarProperty Name="ID_issuance_date" ColumnName="ID_issuance_date" />
+                <ScalarProperty Name="ID_expiry_date" ColumnName="ID_expiry_date" />
+                <ScalarProperty Name="academic_level" ColumnName="academic_level" />
+                <ScalarProperty Name="job_title" ColumnName="job_title" />
+                <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+                <ScalarProperty Name="cell_phone1" ColumnName="cell_phone1" />
+                <ScalarProperty Name="cell_phone2" ColumnName="cell_phone2" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="student_documentation">
             <EntityTypeMapping TypeName="dsmsModel.student_documentation">
               <MappingFragment StoreEntitySet="student_documentation">
-                <ScalarProperty Name="document_content" ColumnName="document_content" />
-                <ScalarProperty Name="document_type" ColumnName="document_type" />
-                <ScalarProperty Name="student_number" ColumnName="student_number" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="student_number" ColumnName="student_number" />
+                <ScalarProperty Name="document_type" ColumnName="document_type" />
+                <ScalarProperty Name="document_content" ColumnName="document_content" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="student_enrollment">
             <EntityTypeMapping TypeName="dsmsModel.student_enrollment">
               <MappingFragment StoreEntitySet="student_enrollment">
-                <ScalarProperty Name="enrollment_user" ColumnName="enrollment_user" />
-                <ScalarProperty Name="enrollment_date" ColumnName="enrollment_date" />
-                <ScalarProperty Name="category" ColumnName="category" />
-                <ScalarProperty Name="student_number" ColumnName="student_number" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="student_number" ColumnName="student_number" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="enrollment_date" ColumnName="enrollment_date" />
+                <ScalarProperty Name="enrollment_user" ColumnName="enrollment_user" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="student_payment">
             <EntityTypeMapping TypeName="dsmsModel.student_payment">
               <MappingFragment StoreEntitySet="student_payment">
-                <ScalarProperty Name="date" ColumnName="date" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="remaining_amount" ColumnName="remaining_amount" />
-                <ScalarProperty Name="total_paid_amount" ColumnName="total_paid_amount" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="installment_number" ColumnName="installment_number" />
-                <ScalarProperty Name="student_number" ColumnName="student_number" />
                 <ScalarProperty Name="receipt_number" ColumnName="receipt_number" />
+                <ScalarProperty Name="student_number" ColumnName="student_number" />
+                <ScalarProperty Name="installment_number" ColumnName="installment_number" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="total_paid_amount" ColumnName="total_paid_amount" />
+                <ScalarProperty Name="remaining_amount" ColumnName="remaining_amount" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="date" ColumnName="date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="student_type">
             <EntityTypeMapping TypeName="dsmsModel.student_type">
               <MappingFragment StoreEntitySet="student_type">
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="dsmsModel.user">
               <MappingFragment StoreEntitySet="user">
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="registration_user" ColumnName="registration_user" />
-                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
-                <ScalarProperty Name="current_login_attempts" ColumnName="current_login_attempts" />
-                <ScalarProperty Name="last_login" ColumnName="last_login" />
-                <ScalarProperty Name="logged" ColumnName="logged" />
-                <ScalarProperty Name="last_password_change" ColumnName="last_password_change" />
-                <ScalarProperty Name="must_change_password" ColumnName="must_change_password" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="disabled" ColumnName="disabled" />
-                <ScalarProperty Name="locked" ColumnName="locked" />
-                <ScalarProperty Name="role" ColumnName="role" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="cell_phone" ColumnName="cell_phone" />
-                <ScalarProperty Name="full_name" ColumnName="full_name" />
                 <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="full_name" ColumnName="full_name" />
+                <ScalarProperty Name="cell_phone" ColumnName="cell_phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="locked" ColumnName="locked" />
+                <ScalarProperty Name="disabled" ColumnName="disabled" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="must_change_password" ColumnName="must_change_password" />
+                <ScalarProperty Name="last_password_change" ColumnName="last_password_change" />
+                <ScalarProperty Name="logged" ColumnName="logged" />
+                <ScalarProperty Name="last_login" ColumnName="last_login" />
+                <ScalarProperty Name="current_login_attempts" ColumnName="current_login_attempts" />
+                <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+                <ScalarProperty Name="registration_user" ColumnName="registration_user" />
+                <ScalarProperty Name="status" ColumnName="status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="user_role">
             <EntityTypeMapping TypeName="dsmsModel.user_role">
               <MappingFragment StoreEntitySet="user_role">
-                <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

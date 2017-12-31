@@ -333,6 +333,7 @@ namespace VenturaITC.DSMSystem.Pages
                         work.SetEntityType<student>();
                         work.Entity.type = ddlStudentType.SelectedValue;
                         work.Entity.type_description = ddlStudentType.SelectedItem.Text;
+                        work.Entity.number = int.Parse(txtStudentNumber.Text.Trim());
                         work.Entity.full_name = txtName.Text.Trim();
                         work.Entity.first_name = StudentUtils.GetFirstName(txtName.Text.Trim());
                         work.Entity.last_name = StudentUtils.GetLastName(txtName.Text.Trim());
@@ -424,7 +425,7 @@ namespace VenturaITC.DSMSystem.Pages
                         //Submit the data into database.
                         work.Save();
 
-                        txtStudentNumber.Text = StudentEntity.number.ToString();
+                        //txtStudentNumber.Text = StudentEntity.number.ToString();
                     }
 
                     ((SiteMaster)Master).ShowAlertNotification(AppConstants.SucessMessage.SUCCESS_OPERATION_EXECUTION, Enumeration.WarningType.Success);
@@ -498,6 +499,13 @@ namespace VenturaITC.DSMSystem.Pages
         {
             try
             {
+                //Validates the receipt number.
+                if (StudentUtils.ExistsStudentNumber(int.Parse(txtStudentNumber.Text)))
+                {
+                    ((SiteMaster)Master).ShowAlertNotification(AppConstants.ErrorMessage.ERROR_ALREADY_EXISTS_STUDENT_NUMBER, Enumeration.WarningType.Danger);
+                    return false;
+                }
+
                 //Validates the names.
                 if (!StringUtils.IsFullNameValid(txtName.Text))
                 {

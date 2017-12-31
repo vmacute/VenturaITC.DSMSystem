@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using VenturaITC.DSMSystem.BLL.Class;
 using VenturaITC.DSMSystem.BLL.Unit;
+using VenturaITC.DSMSystem.DAL.Model;
 using VenturaITC.DSMSystem.MODEL.Class;
 using VenturaITC.DSMSystem.MODEL.Entity;
 using VenturaITC.Login.Class;

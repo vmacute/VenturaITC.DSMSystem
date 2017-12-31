@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VenturaITC.DSMSystem.BLL.Unit;
-using VenturaITC.DSMSystem.MODEL.Entity;
 
-namespace VenturaITC.DSMSystem.BLL.Util
+namespace VenturaITC.DSMSystem.MODEL.Entity
 {
     /// <summary>
     /// Represents the student utilities class.

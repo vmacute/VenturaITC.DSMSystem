@@ -1,5 +1,6 @@
 ﻿using System;
 using VenturaITC.DSMSystem.BLL.Unit;
+using VenturaITC.DSMSystem.DAL.Model;
 using VenturaITC.DSMSystem.MODEL.Class;
 using VenturaITC.DSMSystem.MODEL.Entity;
 

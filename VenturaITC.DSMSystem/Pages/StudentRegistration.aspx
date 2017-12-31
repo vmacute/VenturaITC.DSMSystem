@@ -28,7 +28,9 @@
             <div class="form-group">
                 <asp:Label runat="server" AssociatedControlID="txtStudentNumber" CssClass="col-md-2 control-label">Número</asp:Label>
                 <div class="col-md-10">
-                    <asp:TextBox runat="server" ID="txtStudentNumber" CssClass="form-control" TextMode="Number" Enabled="false" />
+                    <asp:TextBox runat="server" ID="txtStudentNumber" CssClass="form-control" TextMode="Number" Enabled="true" />
+                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtStudentNumber"
+                        CssClass="text-danger" ErrorMessage="O campo número é de preenchimento obrigatório." />
                 </div>
             </div>
             <div class="form-group required">

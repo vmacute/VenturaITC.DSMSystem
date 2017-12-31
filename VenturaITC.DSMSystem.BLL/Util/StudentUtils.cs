@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VenturaITC.DSMSystem.BLL.Class;
 using VenturaITC.DSMSystem.BLL.Unit;
+using VenturaITC.DSMSystem.DAL.Model;
 using VenturaITC.DSMSystem.MODEL.Class;
 using VenturaITC.DSMSystem.MODEL.Entity;
 
@@ -23,6 +24,30 @@ namespace VenturaITC.DSMSystem.BLL.Util
     /// </history>
     public class StudentUtils
     {
+        /// <summary>
+        /// Indicates whether a student number exists into database.
+        /// </summary>
+        /// <param name="number">The student number.</param>
+        /// <returns>True if exists; False otherwise.</returns>
+        public static bool ExistsStudentNumber(int number)
+        {
+            try
+            {
+                student student = UWork<student>.FindByKey(number);
+
+                if (student != null)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// Gets the student first name from a given full name.
         /// </summary>
