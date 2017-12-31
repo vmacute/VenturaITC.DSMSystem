@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="VenturaITC.DSMSystem.SiteMaster" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Styles/MyStyles.css" rel="stylesheet" />
+    <link href="Styles/Template.css" rel="stylesheet" />
+    <%--    <link href="Styles/jquery-ui-1.10.4.custom.css" rel="stylesheet" />--%>
+    <link href="Styles/jquery-ui-1.12.1.custom.css" rel="stylesheet" />
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <telerik:RadSkinManager runat="server" ShowChooser="false" Skin="Silk" />
+        <div class="alert-panel">
+            <asp:Panel ID="pnlAlert" runat="server" Visible="False">
+                <button type="button" runat="server" class="close" data-dismiss="alert" aria-label="Close" onserverclick="CloseAlertPanel">
+                    <span aria-hidden="true">&times;</span></button>
+                <asp:Image runat="server" ID="iconImg" Width="50px" Height="50px"></asp:Image>
+                &nbsp;
+                <asp:Label ID="lblAlert" runat="server" />
+            </asp:Panel>
+        </div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div style="padding: 5px">
+                        <asp:Image runat="server" ID="logoImg" Width="45px" Height="45px" CssClass="img-rounded"></asp:Image>
+                    </div>
+                    <%--  <a class="navbar-brand" runat="server" href="~/">Application name</a>--%>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="#">Home</a></li>
+                        <li><a runat="server" href="~/Pages/StudentRegistration">Inscrição de Alunos</a></li>
+                        <li><a runat="server" href="~/Pages/StudentRegistrationManager">Gestão de Alunos</a></li>
+                        <li><a runat="server" href="~/Pages/Payments">Pagamentos</a></li>
+                        <li><a runat="server" href="~/Pages/Parameterization">Parametrização</a></li>
+                        <li><a runat="server" href="~/Pages/UserManager">Gestão de Utilizadores</a></li>
+                        <%--  <li><a runat="server" href="~/About">Sobre</a></li>
+                        <li><a runat="server" href="~/Contact">Contacto</a></li>--%>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <asp:Label ID="lblUsername" runat="server" CssClass="label-username" />&nbsp;
+                                <asp:Image runat="server" ID="Image1" Width="28px" Height="28px" CssClass="img-circle" ImageUrl="~/Images/user.png" />
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">
+                                    <div style="padding-top: 10px; padding-bottom: 10px;">
+                                        <asp:Label ID="lblFullName" runat="server" CssClass="label-user-full-name" />
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a runat="server" href="~/Pages/PasswordChange">
+                                        <asp:Image runat="server" ID="Image3" Width="18px" Height="18px" CssClass="img-circle" ImageUrl="~/Images/password.png" />&nbsp;&nbsp; Mudar Passsword
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a runat="server" href="~/Pages/Login">
+                                        <asp:Image runat="server" ID="Image2" Width="18px" Height="18px" CssClass="img-circle" ImageUrl="~/Images/logout.png" />&nbsp;&nbsp; Logout
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <%-- <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>--%>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <br />
+            <hr />
+            <footer>
+                <div style="text-align: center;">
+                    <asp:Label runat="server" ID="lblCopyright" Font-Size="11px"></asp:Label>
+                    <br />
+                    <asp:Label runat="server" ID="lblDeveloper" Font-Size="11px" Text="Desenvolvido Por: Ventura IT & Consulting -"></asp:Label>&nbsp;                  
+                    <asp:HyperLink ID="hyperlink1" Font-Size="12px" Text="www.venturaitc.co.mz" NavigateUrl="http://www.venturaitc.co.mz" Target="_new" runat="server" />
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

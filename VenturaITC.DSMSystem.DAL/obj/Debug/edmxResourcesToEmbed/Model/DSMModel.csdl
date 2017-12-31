@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DSMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DSMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AcademicLevels" EntityType="DSMModel.AcademicLevel" />
+    <EntitySet Name="Categories" EntityType="DSMModel.Category" />
+    <EntitySet Name="DBDataStatus" EntityType="DSMModel.DBDataStatu" />
+    <EntitySet Name="DocumentTypes" EntityType="DSMModel.DocumentType" />
+    <EntitySet Name="Genders" EntityType="DSMModel.Gender" />
+    <EntitySet Name="Holidays" EntityType="DSMModel.Holiday" />
+    <EntitySet Name="IDIssuancePlaces" EntityType="DSMModel.IDIssuancePlace" />
+    <EntitySet Name="MaritalStatus" EntityType="DSMModel.MaritalStatu" />
+    <EntitySet Name="Parameterizations" EntityType="DSMModel.Parameterization" />
+    <EntitySet Name="ParameterizationBools" EntityType="DSMModel.ParameterizationBool" />
+    <EntitySet Name="PaymentInstallments" EntityType="DSMModel.PaymentInstallment" />
+    <EntitySet Name="PaymentStatus" EntityType="DSMModel.PaymentStatu" />
+    <EntitySet Name="PaymentTypes" EntityType="DSMModel.PaymentType" />
+    <EntitySet Name="Provinces" EntityType="DSMModel.Province" />
+    <EntitySet Name="Students" EntityType="DSMModel.Student" />
+    <EntitySet Name="StudentDocumentations" EntityType="DSMModel.StudentDocumentation" />
+    <EntitySet Name="StudentPayments" EntityType="DSMModel.StudentPayment" />
+    <EntitySet Name="StudentRegistrations" EntityType="DSMModel.StudentRegistration" />
+    <EntitySet Name="StudentTypes" EntityType="DSMModel.StudentType" />
+    <EntitySet Name="Users" EntityType="DSMModel.User" />
+    <EntitySet Name="UserRoles" EntityType="DSMModel.UserRole" />
+    <AssociationSet Name="FK_User_DBDataStatus" Association="DSMModel.FK_User_DBDataStatus">
+      <End Role="DBDataStatu" EntitySet="DBDataStatus" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentDocumentation_DocumentType" Association="DSMModel.FK_StudentDocumentation_DocumentType">
+      <End Role="DocumentType" EntitySet="DocumentTypes" />
+      <End Role="StudentDocumentation" EntitySet="StudentDocumentations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentDocumentation_Student" Association="DSMModel.FK_StudentDocumentation_Student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="StudentDocumentation" EntitySet="StudentDocumentations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentPayment_Student" Association="DSMModel.FK_StudentPayment_Student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="StudentPayment" EntitySet="StudentPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentRegistration_Student" Association="DSMModel.FK_StudentRegistration_Student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="StudentRegistration" EntitySet="StudentRegistrations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentPayment_User" Association="DSMModel.FK_StudentPayment_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="StudentPayment" EntitySet="StudentPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentRegistration_User" Association="DSMModel.FK_StudentRegistration_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="StudentRegistration" EntitySet="StudentRegistrations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserRole" Association="DSMModel.FK_User_UserRole">
+      <End Role="UserRole" EntitySet="UserRoles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AcademicLevel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cost" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="DBDataStatu">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="DSMModel.FK_User_DBDataStatus" FromRole="DBDataStatu" ToRole="User" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="file_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="StudentDocumentations" Relationship="DSMModel.FK_StudentDocumentation_DocumentType" FromRole="DocumentType" ToRole="StudentDocumentation" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Holiday">
+    <Key>
+      <PropertyRef Name="day" />
+      <PropertyRef Name="month" />
+    </Key>
+    <Property Name="day" Type="Int32" Nullable="false" />
+    <Property Name="month" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IDIssuancePlace">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MaritalStatu">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Parameterization">
+    <Key>
+      <PropertyRef Name="parameter_key" />
+    </Key>
+    <Property Name="parameter_key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="parameter_value" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ParameterizationBool">
+    <Key>
+      <PropertyRef Name="parameter_key" />
+    </Key>
+    <Property Name="parameter_key" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="parameter_value" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentInstallment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="percentage" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="PaymentStatu">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="capital" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="number" />
+    </Key>
+    <Property Name="number" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="type_description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="full_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="birth_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="marital_status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="marital_status_description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gender_description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="place_of_birth" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="province_of_birth" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fathers_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="mothers_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ID_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_issuance_place" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID_issuance_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ID_expiry_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="academic_level" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="job_title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="phone_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cell_phone1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cell_phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="StudentDocumentations" Relationship="DSMModel.FK_StudentDocumentation_Student" FromRole="Student" ToRole="StudentDocumentation" />
+    <NavigationProperty Name="StudentPayments" Relationship="DSMModel.FK_StudentPayment_Student" FromRole="Student" ToRole="StudentPayment" />
+    <NavigationProperty Name="StudentRegistrations" Relationship="DSMModel.FK_StudentRegistration_Student" FromRole="Student" ToRole="StudentRegistration" />
+  </EntityType>
+  <EntityType Name="StudentDocumentation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="student_number" Type="Int32" Nullable="false" />
+    <Property Name="document_type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="document_content" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="DocumentType" Relationship="DSMModel.FK_StudentDocumentation_DocumentType" FromRole="StudentDocumentation" ToRole="DocumentType" />
+    <NavigationProperty Name="Student" Relationship="DSMModel.FK_StudentDocumentation_Student" FromRole="StudentDocumentation" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="StudentPayment">
+    <Key>
+      <PropertyRef Name="receipt_number" />
+    </Key>
+    <Property Name="receipt_number" Type="Int32" Nullable="false" />
+    <Property Name="student_number" Type="Int32" Nullable="false" />
+    <Property Name="installment_number" Type="Int32" />
+    <Property Name="amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="total_paid_amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="remaining_amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Student" Relationship="DSMModel.FK_StudentPayment_Student" FromRole="StudentPayment" ToRole="Student" />
+    <NavigationProperty Name="User" Relationship="DSMModel.FK_StudentPayment_User" FromRole="StudentPayment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="StudentRegistration">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="student_number" Type="Int32" Nullable="false" />
+    <Property Name="category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="registration_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="registration_user" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Student" Relationship="DSMModel.FK_StudentRegistration_Student" FromRole="StudentRegistration" ToRole="Student" />
+    <NavigationProperty Name="User" Relationship="DSMModel.FK_StudentRegistration_User" FromRole="StudentRegistration" ToRole="User" />
+  </EntityType>
+  <EntityType Name="StudentType">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="full_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cell_phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="locked" Type="Boolean" Nullable="false" />
+    <Property Name="disabled" Type="Boolean" Nullable="false" />
+    <Property Name="password" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="must_change_password" Type="Boolean" Nullable="false" />
+    <Property Name="last_password_change" Type="DateTime" Precision="3" />
+    <Property Name="logged" Type="Boolean" Nullable="false" />
+    <Property Name="last_login" Type="DateTime" Precision="3" />
+    <Property Name="current_login_attempts" Type="Int32" Nullable="false" />
+    <Property Name="registration_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="registration_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DBDataStatu" Relationship="DSMModel.FK_User_DBDataStatus" FromRole="User" ToRole="DBDataStatu" />
+    <NavigationProperty Name="StudentPayments" Relationship="DSMModel.FK_StudentPayment_User" FromRole="User" ToRole="StudentPayment" />
+    <NavigationProperty Name="StudentRegistrations" Relationship="DSMModel.FK_StudentRegistration_User" FromRole="User" ToRole="StudentRegistration" />
+    <NavigationProperty Name="UserRole" Relationship="DSMModel.FK_User_UserRole" FromRole="User" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="DSMModel.FK_User_UserRole" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_User_DBDataStatus">
+    <End Type="DSMModel.DBDataStatu" Role="DBDataStatu" Multiplicity="1" />
+    <End Type="DSMModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DBDataStatu">
+        <PropertyRef Name="name" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentDocumentation_DocumentType">
+    <End Type="DSMModel.DocumentType" Role="DocumentType" Multiplicity="1" />
+    <End Type="DSMModel.StudentDocumentation" Role="StudentDocumentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="StudentDocumentation">
+        <PropertyRef Name="document_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentDocumentation_Student">
+    <End Type="DSMModel.Student" Role="Student" Multiplicity="1" />
+    <End Type="DSMModel.StudentDocumentation" Role="StudentDocumentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="number" />
+      </Principal>
+      <Dependent Role="StudentDocumentation">
+        <PropertyRef Name="student_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentPayment_Student">
+    <End Type="DSMModel.Student" Role="Student" Multiplicity="1" />
+    <End Type="DSMModel.StudentPayment" Role="StudentPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="number" />
+      </Principal>
+      <Dependent Role="StudentPayment">
+        <PropertyRef Name="student_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentRegistration_Student">
+    <End Type="DSMModel.Student" Role="Student" Multiplicity="1" />
+    <End Type="DSMModel.StudentRegistration" Role="StudentRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="number" />
+      </Principal>
+      <Dependent Role="StudentRegistration">
+        <PropertyRef Name="student_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentPayment_User">
+    <End Type="DSMModel.User" Role="User" Multiplicity="1" />
+    <End Type="DSMModel.StudentPayment" Role="StudentPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="StudentPayment">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentRegistration_User">
+    <End Type="DSMModel.User" Role="User" Multiplicity="1" />
+    <End Type="DSMModel.StudentRegistration" Role="StudentRegistration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="StudentRegistration">
+        <PropertyRef Name="registration_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserRole">
+    <End Type="DSMModel.UserRole" Role="UserRole" Multiplicity="1" />
+    <End Type="DSMModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserRole">
+        <PropertyRef Name="name" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

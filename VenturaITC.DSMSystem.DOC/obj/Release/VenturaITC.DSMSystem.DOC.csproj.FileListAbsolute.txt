@@ -1,0 +1,4 @@
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\bin\Release\VenturaITC.DSMSystem.DOC.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\bin\Release\VenturaITC.DSMSystem.DOC.pdb
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\obj\Release\VenturaITC.DSMSystem.DOC.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DOC\obj\Release\VenturaITC.DSMSystem.DOC.pdb

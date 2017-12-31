@@ -1,0 +1,12 @@
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\VenturaITC.DSMSystem.DAL.dll.config
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\VenturaITC.DSMSystem.DAL.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\VenturaITC.DSMSystem.DAL.pdb
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\EntityFramework.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\VenturaITC.DSMSystem.MODEL.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\VenturaITC.DSMSystem.MODEL.pdb
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\EntityFramework.xml
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\obj\Release\VenturaITC.DSMSystem.DAL.csprojResolveAssemblyReference.cache
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\obj\Release\VenturaITC.DSMSystem.DAL.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.DAL\obj\Release\VenturaITC.DSMSystem.DAL.pdb

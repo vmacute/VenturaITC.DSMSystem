@@ -1,0 +1,10 @@
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\bin\Debug\VenturaITC.DSMSystem.MODEL.dll.config
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\bin\Debug\VenturaITC.DSMSystem.MODEL.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\bin\Debug\VenturaITC.DSMSystem.MODEL.pdb
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\bin\Debug\EntityFramework.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\bin\Debug\EntityFramework.xml
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\obj\Debug\VenturaITC.DSMSystem.MODEL.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\obj\Debug\VenturaITC.DSMSystem.MODEL.pdb
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DSMSystem.MODEL\obj\Debug\VenturaITC.DSMSystem.MODEL.csprojResolveAssemblyReference.cache

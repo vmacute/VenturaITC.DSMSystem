@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DSMModelStoreContainer" CdmEntityContainer="DSMEntities">
+    <EntitySetMapping Name="AcademicLevels">
+      <EntityTypeMapping TypeName="DSMModel.AcademicLevel">
+        <MappingFragment StoreEntitySet="AcademicLevel">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="DSMModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DBDataStatus">
+      <EntityTypeMapping TypeName="DSMModel.DBDataStatu">
+        <MappingFragment StoreEntitySet="DBDataStatus">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="DSMModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="file_name" ColumnName="file_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="DSMModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Holidays">
+      <EntityTypeMapping TypeName="DSMModel.Holiday">
+        <MappingFragment StoreEntitySet="Holiday">
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="day" ColumnName="day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IDIssuancePlaces">
+      <EntityTypeMapping TypeName="DSMModel.IDIssuancePlace">
+        <MappingFragment StoreEntitySet="IDIssuancePlace">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaritalStatus">
+      <EntityTypeMapping TypeName="DSMModel.MaritalStatu">
+        <MappingFragment StoreEntitySet="MaritalStatus">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parameterizations">
+      <EntityTypeMapping TypeName="DSMModel.Parameterization">
+        <MappingFragment StoreEntitySet="Parameterization">
+          <ScalarProperty Name="parameter_value" ColumnName="parameter_value" />
+          <ScalarProperty Name="parameter_key" ColumnName="parameter_key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParameterizationBools">
+      <EntityTypeMapping TypeName="DSMModel.ParameterizationBool">
+        <MappingFragment StoreEntitySet="ParameterizationBool">
+          <ScalarProperty Name="parameter_value" ColumnName="parameter_value" />
+          <ScalarProperty Name="parameter_key" ColumnName="parameter_key" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentInstallments">
+      <EntityTypeMapping TypeName="DSMModel.PaymentInstallment">
+        <MappingFragment StoreEntitySet="PaymentInstallment">
+          <ScalarProperty Name="percentage" ColumnName="percentage" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentStatus">
+      <EntityTypeMapping TypeName="DSMModel.PaymentStatu">
+        <MappingFragment StoreEntitySet="PaymentStatus">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTypes">
+      <EntityTypeMapping TypeName="DSMModel.PaymentType">
+        <MappingFragment StoreEntitySet="PaymentType">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="DSMModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="capital" ColumnName="capital" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="DSMModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cell_phone2" ColumnName="cell_phone2" />
+          <ScalarProperty Name="cell_phone1" ColumnName="cell_phone1" />
+          <ScalarProperty Name="phone_number" ColumnName="phone_number" />
+          <ScalarProperty Name="job_title" ColumnName="job_title" />
+          <ScalarProperty Name="academic_level" ColumnName="academic_level" />
+          <ScalarProperty Name="ID_expiry_date" ColumnName="ID_expiry_date" />
+          <ScalarProperty Name="ID_issuance_date" ColumnName="ID_issuance_date" />
+          <ScalarProperty Name="ID_issuance_place" ColumnName="ID_issuance_place" />
+          <ScalarProperty Name="ID_number" ColumnName="ID_number" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="mothers_name" ColumnName="mothers_name" />
+          <ScalarProperty Name="fathers_name" ColumnName="fathers_name" />
+          <ScalarProperty Name="province_of_birth" ColumnName="province_of_birth" />
+          <ScalarProperty Name="place_of_birth" ColumnName="place_of_birth" />
+          <ScalarProperty Name="gender_description" ColumnName="gender_description" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="marital_status_description" ColumnName="marital_status_description" />
+          <ScalarProperty Name="marital_status" ColumnName="marital_status" />
+          <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="type_description" ColumnName="type_description" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="number" ColumnName="number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentDocumentations">
+      <EntityTypeMapping TypeName="DSMModel.StudentDocumentation">
+        <MappingFragment StoreEntitySet="StudentDocumentation">
+          <ScalarProperty Name="document_content" ColumnName="document_content" />
+          <ScalarProperty Name="document_type" ColumnName="document_type" />
+          <ScalarProperty Name="student_number" ColumnName="student_number" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentPayments">
+      <EntityTypeMapping TypeName="DSMModel.StudentPayment">
+        <MappingFragment StoreEntitySet="StudentPayment">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="remaining_amount" ColumnName="remaining_amount" />
+          <ScalarProperty Name="total_paid_amount" ColumnName="total_paid_amount" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="installment_number" ColumnName="installment_number" />
+          <ScalarProperty Name="student_number" ColumnName="student_number" />
+          <ScalarProperty Name="receipt_number" ColumnName="receipt_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentRegistrations">
+      <EntityTypeMapping TypeName="DSMModel.StudentRegistration">
+        <MappingFragment StoreEntitySet="StudentRegistration">
+          <ScalarProperty Name="registration_user" ColumnName="registration_user" />
+          <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="student_number" ColumnName="student_number" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StudentTypes">
+      <EntityTypeMapping TypeName="DSMModel.StudentType">
+        <MappingFragment StoreEntitySet="StudentType">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DSMModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="registration_user" ColumnName="registration_user" />
+          <ScalarProperty Name="registration_date" ColumnName="registration_date" />
+          <ScalarProperty Name="current_login_attempts" ColumnName="current_login_attempts" />
+          <ScalarProperty Name="last_login" ColumnName="last_login" />
+          <ScalarProperty Name="logged" ColumnName="logged" />
+          <ScalarProperty Name="last_password_change" ColumnName="last_password_change" />
+          <ScalarProperty Name="must_change_password" ColumnName="must_change_password" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="disabled" ColumnName="disabled" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cell_phone" ColumnName="cell_phone" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="username" ColumnName="username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="DSMModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

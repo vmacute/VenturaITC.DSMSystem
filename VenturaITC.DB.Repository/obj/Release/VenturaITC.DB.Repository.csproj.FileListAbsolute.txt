@@ -1,0 +1,10 @@
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\bin\Release\VenturaITC.DB.Repository.dll.config
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\bin\Release\VenturaITC.DB.Repository.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\bin\Release\VenturaITC.DB.Repository.pdb
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\bin\Release\EntityFramework.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\bin\Release\EntityFramework.xml
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\obj\Release\VenturaITC.DB.Repository.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\obj\Release\VenturaITC.DB.Repository.pdb
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.DB.Repository\obj\Release\VenturaITC.DB.Repository.csprojResolveAssemblyReference.cache

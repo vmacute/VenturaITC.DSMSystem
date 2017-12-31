@@ -1,0 +1,103 @@
+﻿
+/*****************************************************************************************************
+*								RAD GRID 					*
+******************************************************************************************************/
+.RadGrid a.ItemGridLink:visited, .RadGrid a.ItemGridLink:link, .RadGrid a.ItemGridLink:active
+{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.RadGrid a.ItemGridLink:hover
+{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #CD0067;
+}
+
+.RadGrid_Default .rgRow A
+{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.RadGrid_Default .rgRow A:hover
+{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #CD0067;
+}
+
+.RadGrid_Default .rgAltRow A
+{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.RadGrid_Default .rgAltRow A:hover
+{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #CD0067;
+}
+
+.rgExpXLS
+ {
+   float:left ! important;
+   margin-right:1100px ! important;
+ }
+.RadGrid_Default .rgCommandRow
+ {
+  color: Transparent !important;
+ }
+
+
+/*****************************************************************************************************
+*								RAD BUTTON 					*
+******************************************************************************************************/
+
+.RadButton.RadButton_Silk.rbSkinnedButton
+{
+    /** Default **/
+    /*border: 1px solid rgb(204, 204, 204);
+    font-family: 'Trebuchet MS';*/
+   
+    /*By vmacute*/
+    border: 1px solid #CD0067;
+    font-family: 'Trebuchet MS';
+    background-color: #B11D49;
+}
+
+.RadButton.RadButton_Silk.rbSkinnedButton:hover
+{
+    /** Default **/
+    /*border: 1px solid #000000;
+    background-color: White;
+    color: #cd0067;
+    font-weight: bold;*/
+    
+     /** By vmacute **/
+    border: 1px solid #CD0067;
+    background-color: #990000; 
+    font-weight: bold;
+}
+
+.RadButton_Silk .rbDecorated:hover
+{   
+    /** Default **/
+    /*color: #cd0067;*/
+    
+    /** By vmacute **/
+    color: White;
+}
+
+.RadButton_Silk .rbDecorated
+{
+    /** Default **/
+    /*color: rgb(0, 0, 0);
+    font-weight: bold;*/
+    
+    /** By vmacute **/
+    color: White;
+    font-weight: bold;
+}

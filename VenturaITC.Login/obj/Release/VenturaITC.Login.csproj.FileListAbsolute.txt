@@ -1,0 +1,4 @@
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.Login\bin\Release\VenturaITC.Login.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.Login\bin\Release\VenturaITC.Login.pdb
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.Login\obj\Release\VenturaITC.Login.dll
+C:\Users\ventura.macute\documents\visual studio 2015\Projects\VenturaITC.DSMSystem\VenturaITC.Login\obj\Release\VenturaITC.Login.pdb

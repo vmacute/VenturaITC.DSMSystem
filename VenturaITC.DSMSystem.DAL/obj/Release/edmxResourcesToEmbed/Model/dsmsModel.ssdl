@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dsmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="academic_level">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cost" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="db_data_status">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="document_type">
+    <Key>
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="file_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="gender">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="holiday">
+    <Key>
+      <PropertyRef Name="day" />
+      <PropertyRef Name="month" />
+    </Key>
+    <Property Name="day" Type="int" Nullable="false" />
+    <Property Name="month" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="id_issuance_place">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="marital_status">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="parameterization">
+    <Key>
+      <PropertyRef Name="parameter_key" />
+    </Key>
+    <Property Name="parameter_key" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="parameter_value" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="parameterization_bool">
+    <Key>
+      <PropertyRef Name="parameter_key" />
+    </Key>
+    <Property Name="parameter_key" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="parameter_value" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment_installment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="percentage" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment_status">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment_type">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="province">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="capital" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student">
+    <Key>
+      <PropertyRef Name="number" />
+    </Key>
+    <Property Name="number" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="type_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="birth_date" Type="date" Nullable="false" />
+    <Property Name="marital_status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="marital_status_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="place_of_birth" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="province_of_birth" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fathers_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="mothers_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="ID_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_issuance_place" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID_issuance_date" Type="date" Nullable="false" />
+    <Property Name="ID_expiry_date" Type="date" Nullable="false" />
+    <Property Name="academic_level" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="job_title" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cell_phone1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cell_phone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_documentation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_number" Type="int" Nullable="false" />
+    <Property Name="document_type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="document_content" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_enrollment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_number" Type="int" Nullable="false" />
+    <Property Name="category" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="enrollment_date" Type="datetime" Nullable="false" />
+    <Property Name="enrollment_user" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_payment">
+    <Key>
+      <PropertyRef Name="receipt_number" />
+    </Key>
+    <Property Name="receipt_number" Type="int" Nullable="false" />
+    <Property Name="student_number" Type="int" Nullable="false" />
+    <Property Name="installment_number" Type="int" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="total_paid_amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="remaining_amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_type">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="full_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="cell_phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="role" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="locked" Type="bit" Nullable="false" />
+    <Property Name="disabled" Type="bit" Nullable="false" />
+    <Property Name="password" Type="varbinary(max)" Nullable="false" />
+    <Property Name="must_change_password" Type="bit" Nullable="false" />
+    <Property Name="last_password_change" Type="datetime" />
+    <Property Name="logged" Type="bit" Nullable="false" />
+    <Property Name="last_login" Type="datetime" />
+    <Property Name="current_login_attempts" Type="int" Nullable="false" />
+    <Property Name="registration_date" Type="datetime" Nullable="false" />
+    <Property Name="registration_user" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_role">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_StudentDocumentation_DocumentType">
+    <End Role="document_type" Type="Self.document_type" Multiplicity="1" />
+    <End Role="student_documentation" Type="Self.student_documentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="document_type">
+        <PropertyRef Name="type" />
+      </Principal>
+      <Dependent Role="student_documentation">
+        <PropertyRef Name="document_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentDocumentation_Student">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="student_documentation" Type="Self.student_documentation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="number" />
+      </Principal>
+      <Dependent Role="student_documentation">
+        <PropertyRef Name="student_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentPayment_Student">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="student_payment" Type="Self.student_payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="number" />
+      </Principal>
+      <Dependent Role="student_payment">
+        <PropertyRef Name="student_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentPayment_User">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="student_payment" Type="Self.student_payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="student_payment">
+        <PropertyRef Name="username" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentRegistration_Student">
+    <End Role="student" Type="Self.student" Multiplicity="1" />
+    <End Role="student_enrollment" Type="Self.student_enrollment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student">
+        <PropertyRef Name="number" />
+      </Principal>
+      <Dependent Role="student_enrollment">
+        <PropertyRef Name="student_number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentRegistration_User">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="student_enrollment" Type="Self.student_enrollment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="student_enrollment">
+        <PropertyRef Name="enrollment_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_DBDataStatus">
+    <End Role="db_data_status" Type="Self.db_data_status" Multiplicity="1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="db_data_status">
+        <PropertyRef Name="name" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserRole">
+    <End Role="user_role" Type="Self.user_role" Multiplicity="1" />
+    <End Role="user" Type="Self.user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_role">
+        <PropertyRef Name="name" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dsmsModelStoreContainer">
+    <EntitySet Name="academic_level" EntityType="Self.academic_level" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="db_data_status" EntityType="Self.db_data_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="document_type" EntityType="Self.document_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gender" EntityType="Self.gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="holiday" EntityType="Self.holiday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="id_issuance_place" EntityType="Self.id_issuance_place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="marital_status" EntityType="Self.marital_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="parameterization" EntityType="Self.parameterization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="parameterization_bool" EntityType="Self.parameterization_bool" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payment_installment" EntityType="Self.payment_installment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payment_status" EntityType="Self.payment_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="payment_type" EntityType="Self.payment_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="province" EntityType="Self.province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student" EntityType="Self.student" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_documentation" EntityType="Self.student_documentation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_enrollment" EntityType="Self.student_enrollment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_payment" EntityType="Self.student_payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="student_type" EntityType="Self.student_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_role" EntityType="Self.user_role" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_StudentDocumentation_DocumentType" Association="Self.FK_StudentDocumentation_DocumentType">
+      <End Role="document_type" EntitySet="document_type" />
+      <End Role="student_documentation" EntitySet="student_documentation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentDocumentation_Student" Association="Self.FK_StudentDocumentation_Student">
+      <End Role="student" EntitySet="student" />
+      <End Role="student_documentation" EntitySet="student_documentation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentPayment_Student" Association="Self.FK_StudentPayment_Student">
+      <End Role="student" EntitySet="student" />
+      <End Role="student_payment" EntitySet="student_payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentPayment_User" Association="Self.FK_StudentPayment_User">
+      <End Role="user" EntitySet="user" />
+      <End Role="student_payment" EntitySet="student_payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentRegistration_Student" Association="Self.FK_StudentRegistration_Student">
+      <End Role="student" EntitySet="student" />
+      <End Role="student_enrollment" EntitySet="student_enrollment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentRegistration_User" Association="Self.FK_StudentRegistration_User">
+      <End Role="user" EntitySet="user" />
+      <End Role="student_enrollment" EntitySet="student_enrollment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_DBDataStatus" Association="Self.FK_User_DBDataStatus">
+      <End Role="db_data_status" EntitySet="db_data_status" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserRole" Association="Self.FK_User_UserRole">
+      <End Role="user_role" EntitySet="user_role" />
+      <End Role="user" EntitySet="user" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
